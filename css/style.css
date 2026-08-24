@@ -1,0 +1,255 @@
+/* ========================================
+   HOJA DE ESTILOS CSS - ZONAGAME
+   UBICACIÓN: css/style.css
+   ======================================== */
+
+/* ========================================
+   MODELO DE CAJAS
+   padding, margin, border, box-sizing
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   COLORES Y TIPOGRAFÍAS
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ========================================
+   HEADER - Cabecera
+   ======================================== */
+
+header {
+    background: linear-gradient(135deg, #6b46c1, #805ad5);
+    color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(107, 70, 193, 0.3);
+}
+
+.titulo-principal {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.descripcion-tienda {
+    font-size: 1.2rem;
+    color: #e9d8fd;
+    font-style: italic;
+}
+
+/* ========================================
+   NAV - Menú de navegación
+   ======================================== */
+
+nav {
+    background: #ffffff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.menu-navegacion {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.menu-navegacion li a {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   SELECTOR AVANZADO: :hover
+   ======================================== */
+
+.menu-navegacion li a:hover {
+    background: #6b46c1;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 70, 193, 0.25);
+}
+
+/* ========================================
+   SECTION - Productos
+   ======================================== */
+
+#productos-destacados {
+    background: #ffffff;
+    padding: 28px 24px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+#productos-destacados h2 {
+    font-size: 1.8rem;
+    color: #2d3748;
+    border-bottom: 3px solid #6b46c1;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+}
+
+#productos-destacados > p {
+    color: #4a5568;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* ========================================
+   LISTA DE PRODUCTOS - GRID RESPONSIVE
+   ======================================== */
+
+.lista-productos {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 0;
+}
+
+/* ========================================
+   SELECTOR DE CLASE: .producto-item
+   ======================================== */
+
+.producto-item {
+    background: #f7fafc;
+    padding: 20px 16px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   SELECTOR AVANZADO: :hover y :nth-child()
+   ======================================== */
+
+.producto-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+}
+
+.producto-item:nth-child(1) {
+    border-top: 5px solid #f6ad55;
+}
+
+.producto-item:nth-child(2) {
+    border-top: 5px solid #68d391;
+}
+
+.producto-item:nth-child(3) {
+    border-top: 5px solid #63b3ed;
+}
+
+/* ========================================
+   PRODUCTOS - TEXTO E IMÁGENES
+   ======================================== */
+
+.producto-item h3 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin: 12px 0 8px;
+    font-weight: 600;
+}
+
+.producto-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    margin: 8px 0;
+    transition: transform 0.3s ease;
+}
+
+.producto-item img:hover {
+    transform: scale(1.03);
+}
+
+.producto-item p {
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin: 6px 0;
+}
+
+/* ========================================
+   SELECTOR DE CLASE: .precio
+   ======================================== */
+
+.precio {
+    color: #6b46c1;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* ========================================
+   FOOTER - Pie de página
+   ======================================== */
+
+footer {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 28px 20px;
+    border-radius: 16px;
+    text-align: center;
+    border-top: 4px solid #6b46c1;
+    margin-top: 10px;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: #9f7aea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #b794f4;
+    text-decoration: underline;
+}
+
+/* ========================================
+   SELECTOR AVANZADO: :last-child
+   ======================================== */
+
+.redes-sociales a {
+    margin: 0 10px;
+    color: #a0aec0;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #9f7aea;
+    text-decoration: none;
+}
