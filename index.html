@@ -1,52 +1,70 @@
-Semana1_TiendaVideojuegos
-html
+Semana2_TiendaVideojuegos
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZonaGame - Tienda de Videojuegos</title>
+    <title>🎮 ZonaGame - Tienda de Videojuegos</title>
+    <!-- ===== HOJA DE ESTILOS CSS EXTERNA ===== -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- ===== CABECERA ===== -->
     <header>
-        <h1> ZonaGame</h1>
-        <p>La tienda de videojuegos, consolas y accesorios </p>
+        <h1 class="titulo-principal">🎮 ZonaGame</h1>
+        <p class="descripcion-tienda">La tienda de videojuegos, consolas y accesorios </p>
     </header>
 
+    <!-- ===== MENÚ DE NAVEGACIÓN ===== -->
     <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
+        <ul class="menu-navegacion">
+            <li><a href="#">🏠 Inicio</a></li>
+            <li><a href="#">🎮 Productos</a></li>
+            <li><a href="#">📞 Contacto</a></li>
         </ul>
     </nav>
 
-    <section>
-        <h2> Productos destacados</h2>
-        <ul>
-            <li>
-                <h3> Super Mario Bros. Wonder</h3>
-                <img src="https://via.placeholder.com/200x150/FFD700/FFFFFF?text=Mario" alt="Super Mario Bros. Wonder">
-                <p>Mundo de colores y sorpresas en la nueva aventura de Mario.</p>
+    <!-- ===== SECCIÓN DE PRODUCTOS ===== -->
+    <section id="productos-destacados">
+        <h2>🌟 Productos destacados 🌟</h2>
+        <p>🎯 Encuentra los videojuegos más divertidos y populares.</p>
+        
+        <ul class="lista-productos">
+            <li class="producto-item">
+                <h3>🍄 Super Mario Bros. Wonder</h3>
+                <!-- IMAGEN LOCAL -->
+                <img src="imagenes/mario.jpg" alt="Super Mario Bros. Wonder">
+                <p>🌈 Mundo de colores y sorpresas en la nueva aventura de Mario.</p>
+                <p><span class="precio">💰 $59.990 CLP</span></p>
             </li>
-            <li>
-                <h3> Disney Dreamlight Valley</h3>
-                <img src="https://via.placeholder.com/200x150/9370DB/FFFFFF?text=Disney" alt="Disney Dreamlight Valley">
-                <p>Vive con tus personajes Disney favoritos en este mágico valle.</p>
+            <li class="producto-item">
+                <h3>🏰 Disney Dreamlight Valley</h3>
+                <!-- IMAGEN LOCAL -->
+                <img src="imagenes/disney.jpg" alt="Disney Dreamlight Valley">
+                <p>✨ Vive con tus personajes Disney favoritos en este mágico valle.</p>
+                <p><span class="precio">💰 $69.990 CLP</span></p>
             </li>
-            <li>
-                <h3> Minecraft</h3>
-                <img src="https://via.placeholder.com/200x150/32CD32/FFFFFF?text=Minecraft" alt="Minecraft">
-                <p>Construye todo lo que imagines en un mundo sin límites.</p>
+            <li class="producto-item">
+                <h3>⛏️ Minecraft</h3>
+                <!-- IMAGEN LOCAL -->
+                <img src="imagenes/minecraft.jpg" alt="Minecraft">
+                <p>🧱 Construye todo lo que imagines en un mundo sin límites.</p>
+                <p><span class="precio">💰 $69.990 CLP</span></p>
             </li>
         </ul>
     </section>
 
+    <!-- ===== PIE DE PÁGINA ===== -->
     <footer>
-        <p> Dirección: Av. Videojuegoscarolina 123, Ciudad Santiago</p>
-        <p> Email: info@zonagame.cl</p>
-        <p> Síguenos en: Facebook | Twitter | Instagram</p>
+        <p>📌 Dirección: Av. Videojuegoscarolina 123, Ciudad Santiago</p>
+        <p>📧 Email: <a href="mailto:info@zonagame.cl">info@zonagame.cl</a></p>
+        <p class="redes-sociales">
+            📱 <a href="#">Facebook</a> |
+            📱 <a href="#">Twitter</a> |
+            📱 <a href="#">Instagram</a>
+        </p>
     </footer>
 
 </body>
