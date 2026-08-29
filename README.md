@@ -22,6 +22,21 @@ La página utiliza:
 ## Estilos CSS implementados
 
 ### Modelo de cajas
+## Actividad Semana 2 - Optimizando la página web con CSS
+
+---
+
+##  Descripción
+
+Página web para una tienda de videojuegos llamada **"ZonaGame"**, optimizada visualmente con CSS como parte de la actividad formativa de la semana 2.
+
+La página utiliza etiquetas semánticas HTML y una hoja de estilos CSS externa para mejorar la presentación visual.
+
+---
+
+##  Estilos CSS implementados
+
+###  Modelo de cajas
 - `padding` y `margin` para espaciado entre elementos
 - `border` para delinear secciones y productos
 - `box-sizing: border-box` para un control preciso del tamaño
@@ -32,6 +47,12 @@ La página utiliza:
 - **Tamaños de texto:** Jerarquía visual clara
 
 ### Selectores avanzados
+###  Colores y tipografías
+- **Paleta de colores:** Morado (`#6b46c1`), gris (`#2d3748`), blanco (`#ffffff`)
+- **Tipografía:** `Segoe UI` para mejor legibilidad
+- **Tamaños de texto:** Jerarquía visual clara
+
+###  Selectores avanzados
 - **Clases:** `.titulo-principal`, `.descripcion-tienda`, `.producto-item`, `.precio`
 - **ID:** `#productos-destacados`
 - **Pseudo-clases:** `:hover`, `:nth-child()`, `:last-child`
@@ -44,6 +65,9 @@ La página utiliza:
 ---
 
 ## Estructura del proyecto
+---
+
+##  Estructura del proyecto
 tienda-videojuegos-html/
 ├── index.html
 ├── README.md
@@ -72,6 +96,27 @@ tienda-videojuegos-html/
 
 ### 🖥️ Vista en escritorio
 ![Vista escritorio](capturas/captura_escritorio.png)
+├── captura1_vista_completa.png
+├── captura2_menu_navegacion.png
+└── captura3_productos_destacados.png
+
+text
+
+---
+
+##  Capturas de pantalla
+
+### Vista completa de la página
+![Vista completa](capturas/captura1_vista_completa.png)
+
+### Menú de navegación
+![Menú de navegación](capturas/captura2_menu_navegacion.png)
+
+### Productos destacados
+![Productos destacados](capturas/captura3_productos_destacados.png)
+
+### Pie de página
+![Pie de página](capturas/captura4_pie_pagina.png)
 
 ---
 
@@ -114,3 +159,7 @@ tienda-videojuegos-html/
 ---
 
 *Actividad realizada para la asignatura de Frontend I - Sumativa 1 (Semana 3)*
+## URL del sitio:
+
+https://carosolis45.github.io/tienda-videojuegos-html/
+
