@@ -67,20 +67,20 @@ text
 
 ---
 
-## 📸 Capturas de pantalla
+## Capturas de pantalla
 
-### 📱 Vista en dispositivo móvil
-![Vista móvil](capturas/captura_movil.png)
+### Vista en dispositivo móvil
+![Vista móvil](capturas/semana4captura_movil.png)
 
-### 📟 Vista en tablet
-![Vista tablet](capturas/captura_tablet.png)
+### Vista en tablet
+![Vista tablet](capturas/semana4captura_tablet.png)
 
-### 🖥️ Vista en escritorio
-![Vista escritorio](capturas/captura_escritorio.png)
+### Vista en escritorio
+![Vista escritorio](capturas/semana4vistacompleta.png)
 
 ---
 
-## 🖼️ Imágenes de productos
+## Imágenes de productos
 
 | Producto | Imagen |
 |----------|--------|
@@ -93,7 +93,7 @@ text
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 | Tecnología | Descripción |
 |------------|-------------|
@@ -104,19 +104,19 @@ text
 
 ---
 
-## 🔗 Enlaces
+## Enlaces
 
 - **Repositorio:** https://github.com/carosolis45/tienda-videojuegos-html
 - **GitHub Pages:** https://carosolis45.github.io/tienda-videojuegos-html/
 
 ---
 
-## 📌 Datos del estudiante
+## Datos del estudiante
 
 - **Nombre:** Carolina Solís
 - **Curso:** Frontend I
 - **Semana:** 4 - Formativa
-- **Fecha:** 07 septiembre 2026
+- **Fecha:** 31 Agosto 2026
 
 ---
 
