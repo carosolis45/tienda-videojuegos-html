@@ -48,6 +48,7 @@ La página utiliza los siguientes componentes de Bootstrap 5:
 ---
 
 ## 📁 Estructura del proyecto
+```
 tienda-videojuegos-html/
 ├── index.html
 ├── README.md
@@ -63,7 +64,7 @@ tienda-videojuegos-html/
 ├── captura_tablet.png
 └── captura_escritorio.png
 
-text
+```
 
 ---
 
