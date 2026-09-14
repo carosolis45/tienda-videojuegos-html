@@ -58,6 +58,7 @@ Página web para una tienda de videojuegos llamada **"ZonaGame"**, mejorada con 
 ---
 
 ## Estructura del proyecto
+```text
 tienda-videojuegos-html/
 ├── index.html
 ├── README.md
@@ -82,7 +83,7 @@ tienda-videojuegos-html/
 ├── captura_productos_dinamicos.png
 └── captura_notificacion.png
 
-text
+```
 
 ---
 
