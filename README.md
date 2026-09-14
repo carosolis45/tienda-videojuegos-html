@@ -1,57 +1,72 @@
-# 🎮 ZonaGame - Tienda de Videojuegos
+# ZonaGame - Tienda de Videojuegos
 
-## 📌 Actividad Formativa - Semana 4
-### Utilizando Bootstrap 5 para el diseño responsivo
-
----
-
-## 📋 Descripción
-
-Página web para una tienda de videojuegos llamada **"ZonaGame"**, implementada utilizando **Bootstrap 5** para lograr un diseño completamente responsivo y moderno.
-
-La página utiliza los siguientes componentes de Bootstrap 5:
-- ✅ **Navbar** responsiva con colapso en móvil
-- ✅ **Carousel** con cambio automático de imágenes
-- ✅ **Sistema de Grid** para organizar el contenido
-- ✅ **Cards** para mostrar productos de manera ordenada
-- ✅ **Estilos personalizados** que complementan Bootstrap
+## Actividad Formativa - Semana 5
+### Manipulando el DOM con JavaScript para Mejorar la Interactividad
 
 ---
 
-## 🎨 Componentes de Bootstrap 5 implementados
+## Descripción
 
-### ✅ Navbar
-- Barra de navegación responsiva
-- Se colapsa automáticamente en dispositivos móviles
-- Incluye enlaces a Inicio, Productos, Nosotros y Contacto
-
-### ✅ Carousel
-- Carrusel de imágenes con 3 slides
-- Cambio automático cada 3 segundos
-- Indicadores y controles de navegación
-
-### ✅ Grid System
-- Organización del contenido en columnas responsivas
-- Uso de clases como `col-12`, `col-md-6`, `col-lg-4`
-- Adaptación a diferentes tamaños de pantalla
-
-### ✅ Cards
-- Tarjetas para mostrar productos destacados
-- Incluyen imagen, título, descripción y precio
-- Organizadas en filas responsivas
-
-### ✅ Estilos personalizados
-- Paleta de colores personalizada (morado `#6b46c1`)
-- Efectos `hover` en tarjetas y botones
-- Mejoras de contraste y legibilidad
+Página web para una tienda de videojuegos llamada **"ZonaGame"**, mejorada con **JavaScript** para agregar interactividad dinámica mediante la manipulación del DOM, eventos y la Fetch API.
 
 ---
 
-## 📁 Estructura del proyecto
-```
+## Funcionalidades implementadas
+
+### Manipulación del DOM
+- Selección dinámica de elementos con `querySelector` y `querySelectorAll`
+- Creación de nuevas tarjetas con `createElement` y `appendChild`
+- Actualización dinámica de contenido con `innerHTML`
+
+### Eventos (click, mouseover, submit)
+- **Click** en botones "Agregar al carrito" → muestra notificación
+- **Click** en "Ver más productos" → carga productos dinámicamente
+- **Mouseover** en tarjetas → efecto de elevación
+- **Submit** en formulario → valida y muestra mensaje de agradecimiento
+
+### Fetch API
+- Carga de productos desde `data/productos.json`
+- Manejo de promesas con `.then()` y `.catch()`
+- Renderizado dinámico en el DOM
+- Manejo de errores
+
+### Buenas prácticas
+- Código organizado en funciones con nombres claros
+- Comentarios explicativos en cada sección
+- Separación de responsabilidades (CSS, HTML, JS)
+- CSS externo (`css/style.css`) siguiendo la sugerencia del profesor
+
+---
+
+## Estilos CSS implementados
+
+### CSS externo (Sugerencia del profesor)
+- Hoja de estilos separada en `css/style.css`
+- Mantenimiento más fácil, mejor caché y separación de responsabilidades
+
+### Paleta cromática
+- Morado principal: `#6b46c1`
+- Morado claro: `#805ad5`
+- Morado hover: `#b794f4`
+- Gris oscuro: `#1a202c`
+
+### Diseño responsivo
+- **Flexbox** y **CSS Grid** vía Bootstrap 5
+- **Media Queries** personalizadas
+- Adaptación a móvil, tablet y escritorio
+
+---
+
+## Estructura del proyecto
 tienda-videojuegos-html/
 ├── index.html
 ├── README.md
+├── css/
+│ └── style.css
+├── data/
+│ └── productos.json
+├── js/
+│ └── script.js
 ├── imagenes/
 │ ├── mario.jpg
 │ ├── disney.jpg
@@ -62,26 +77,35 @@ tienda-videojuegos-html/
 └── capturas/
 ├── captura_movil.png
 ├── captura_tablet.png
-└── captura_escritorio.png
+├── captura_escritorio.png
+├── captura_dom.png
+├── captura_productos_dinamicos.png
+└── captura_notificacion.png
 
-```
+text
 
 ---
 
 ## Capturas de pantalla
 
 ### Vista en dispositivo móvil
-![Vista móvil](capturas/semana4captura_movil.png)
+![Vista móvil](capturas/captura_movil.png)
 
 ### Vista en tablet
-![Vista tablet](capturas/semana4captura_tablet.png)
+![Vista tablet](capturas/captura_tablet.png)
 
 ### Vista en escritorio
-![Vista escritorio](capturas/semana4vistacompleta.png)
+![Vista escritorio](capturas/captura_escritorio.png)
+
+### Productos cargados dinámicamente (Fetch API)
+![Productos dinámicos](capturas/captura_productos_dinamicos.png)
+
+### Notificación al agregar al carrito
+![Notificación](capturas/captura_notificacion.png)
 
 ---
 
-## Imágenes de productos
+## 🖼️ Imágenes de productos
 
 | Producto | Imagen |
 |----------|--------|
@@ -100,7 +124,9 @@ tienda-videojuegos-html/
 |------------|-------------|
 | **HTML5** | Estructura semántica de la página |
 | **Bootstrap 5** | Framework CSS para diseño responsivo |
-| **CSS3** | Estilos personalizados complementarios |
+| **CSS3** | Estilos personalizados externos |
+| **JavaScript (ES6+)** | Manipulación del DOM, eventos y Fetch API |
+| **JSON** | Fuente de datos externa para productos |
 | **GitHub Pages** | Publicación del sitio en línea |
 
 ---
@@ -116,15 +142,9 @@ tienda-videojuegos-html/
 
 - **Nombre:** Carolina Solís
 - **Curso:** Frontend I
-- **Semana:** 4 - Formativa
-- **Fecha:** 31 Agosto 2026
+- **Semana:** 5 - Formativa
+- **Fecha:** 14 Septiembre 2026
 
 ---
 
-*Actividad realizada para la asignatura de Frontend I - Formativa (Semana 4)*
-
-
-## URL del sitio:
-
-https://carosolis45.github.io/tienda-videojuegos-html/
-
+*Actividad realizada para la asignatura de Frontend I - Formativa (Semana 5)*
