@@ -1,4 +1,4 @@
-Semana4_TiendaVideojuegos
+Semana5_TiendaVideojuegos
 
 <!DOCTYPE html>
 <html lang="es">
@@ -11,124 +11,18 @@ Semana4_TiendaVideojuegos
     BOOTSTRAP 5 CDN
     ======================================== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Iconos de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- ========================================
-    ESTILOS PERSONALIZADOS (COMPLEMENTAN BOOTSTRAP)
+    HOJA DE ESTILOS CSS EXTERNA (Semana 5)
     ======================================== -->
-    <style>
-        body {
-            background-color: #f0f4f8;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #6b46c1, #805ad5);
-            color: white;
-            padding: 60px 0;
-            border-radius: 0 0 30px 30px;
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .card {
-            border-radius: 16px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-img-top {
-            border-radius: 16px 16px 0 0;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .precio {
-            color: #6b46c1;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .btn-primary-custom {
-            background-color: #6b46c1;
-            border-color: #6b46c1;
-            color: white;
-        }
-
-        .btn-primary-custom:hover {
-            background-color: #805ad5;
-            border-color: #805ad5;
-            color: white;
-        }
-
-        .section-title {
-            color: #2d3748;
-            font-weight: 700;
-            margin-bottom: 30px;
-            border-bottom: 4px solid #6b46c1;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        /* Carrusel */
-        .carousel-item img {
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a202c;
-            color: #e2e8f0;
-            padding: 40px 0 20px;
-        }
-
-        footer a {
-            color: #b794f4;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #d6bcfa;
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            .carousel-item img {
-                height: 200px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <!-- ========================================
     NAVBAR - Barra de navegación (Bootstrap)
     ======================================== -->
-
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -139,30 +33,21 @@ Semana4_TiendaVideojuegos
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#inicio">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#productos">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nosotros">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- ========================================
-    HERO - Seccion de bienvenida
+    HERO - Sección de bienvenida
     ======================================== -->
-
     <section class="hero-section text-center" id="inicio">
         <div class="container">
-            <h1>🎮 ZonaGame 🎮 </h1>
+            <h1>🎮 ZonaGame 🎮</h1>
             <p class="lead">La tienda de videojuegos, consolas y accesorios</p>
             <p>Encuentra los mejores juegos al mejor precio</p>
             <a href="#productos" class="btn btn-light btn-lg mt-3 rounded-pill px-5">
@@ -172,62 +57,56 @@ Semana4_TiendaVideojuegos
     </section>
 
     <!-- ========================================
-    CARRUSEL - Carrusel de imagenes (Bootstrap)
+    CARRUSEL - Carrusel de imágenes (Bootstrap)
     ======================================== -->
-
     <section class="container mt-5">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner rounded-4 shadow">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&h=400&fit=crop" class="d-block w-100" alt="Ofertas en videojuegos">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>🎮 Ofertas Imperdibles</h3>
+                        <p>Los mejores videojuegos con descuentos exclusivos</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&h=400&fit=crop" class="d-block w-100" alt="Nuevos lanzamientos">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>🕹️ Nuevos Lanzamientos</h3>
+                        <p>Los títulos más esperados del año</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/3945659/pexels-photo-3945659.jpeg" class="d-block w-100" alt="Gaming setup">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>🎯 Envío Gratis</h3>
+                        <p>En compras superiores a $30.000</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-        <div class="carousel-inner rounded-4 shadow">
-            <div class="carousel-item active">
-                <!-- IMAGEN REAL 1: Ofertas en videojuegos -->
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&h=400&fit=crop" class="d-block w-100" alt="Ofertas en videojuegos">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>🎮 Ofertas Imperdibles</h3>
-                    <p>Los mejores videojuegos con descuentos exclusivos</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <!-- IMAGEN REAL 2: Nuevos lanzamientos -->
-                <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&h=400&fit=crop" class="d-block w-100" alt="Nuevos lanzamientos">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>🕹️ Nuevos Lanzamientos</h3>
-                    <p>Los títulos más esperados del año</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <!-- IMAGEN REAL 3: Gaming setup -->
-                 <img src="https://images.pexels.com/photos/3945659/pexels-photo-3945659.jpeg" class="d-block w-100" alt="Nuevos lanzamientos">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>🎯 Envío Gratis</h3>
-                    <p>En compras superiores a $30.000</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-</section>
+    </section>
 
     <!-- ========================================
     PRODUCTOS - Grid System + Cards (Bootstrap)
     ======================================== -->
-
     <section class="container mt-5" id="productos">
         <h2 class="section-title">🌟 Productos Destacados</h2>
         <p class="text-muted mb-4">Descubre nuestra selección de videojuegos más populares</p>
 
         <!-- Grid de productos -->
         <div class="row g-4">
-
             <!-- Card 1: Mario Bros -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
@@ -236,12 +115,12 @@ Semana4_TiendaVideojuegos
                         <h5 class="card-title">🍄 Super Mario Bros. Wonder</h5>
                         <p class="card-text text-muted">Mundo de colores y sorpresas en la nueva aventura de Mario.</p>
                         <p class="precio mt-auto">💰 $59.990 CLP</p>
-                        <button class="btn btn-primary-custom w-100">Agregar al carrito 🛒</button>
+                        <button class="btn btn-primary-custom w-100 btn-agregar">Agregar al carrito 🛒</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 2: Disney Dreamlight Valley -->
+            <!-- Card 2: Disney -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
                     <img src="imagenes/disney.jpg" class="card-img-top" alt="Disney Dreamlight Valley">
@@ -249,7 +128,7 @@ Semana4_TiendaVideojuegos
                         <h5 class="card-title">🏰 Disney Dreamlight Valley</h5>
                         <p class="card-text text-muted">Vive con tus personajes Disney favoritos en este mágico valle.</p>
                         <p class="precio mt-auto">💰 $69.990 CLP</p>
-                        <button class="btn btn-primary-custom w-100">Agregar al carrito 🛒</button>
+                        <button class="btn btn-primary-custom w-100 btn-agregar">Agregar al carrito 🛒</button>
                     </div>
                 </div>
             </div>
@@ -262,12 +141,12 @@ Semana4_TiendaVideojuegos
                         <h5 class="card-title">⛏️ Minecraft</h5>
                         <p class="card-text text-muted">Construye todo lo que imagines en un mundo sin límites.</p>
                         <p class="precio mt-auto">💰 $69.990 CLP</p>
-                        <button class="btn btn-primary-custom w-100">Agregar al carrito 🛒</button>
+                        <button class="btn btn-primary-custom w-100 btn-agregar">Agregar al carrito 🛒</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 4: Hogwarts Legacy -->
+            <!-- Card 4: Hogwarts -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
                     <img src="imagenes/hogwarts.jpg" class="card-img-top" alt="Hogwarts Legacy">
@@ -275,12 +154,12 @@ Semana4_TiendaVideojuegos
                         <h5 class="card-title">🪄 Hogwarts Legacy</h5>
                         <p class="card-text text-muted">Explora el mundo mágico de Harry Potter.</p>
                         <p class="precio mt-auto">💰 $79.990 CLP</p>
-                        <button class="btn btn-primary-custom w-100">Agregar al carrito 🛒</button>
+                        <button class="btn btn-primary-custom w-100 btn-agregar">Agregar al carrito 🛒</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 5: Pokémon Violet -->
+            <!-- Card 5: Pokémon -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
                     <img src="imagenes/pokemon.jpg" class="card-img-top" alt="Pokemon Violet">
@@ -288,7 +167,7 @@ Semana4_TiendaVideojuegos
                         <h5 class="card-title">🌈 Pokémon Violet</h5>
                         <p class="card-text text-muted">Aventura en un mundo abierto con tus Pokémon favoritos.</p>
                         <p class="precio mt-auto">💰 $64.990 CLP</p>
-                        <button class="btn btn-primary-custom w-100">Agregar al carrito 🛒</button>
+                        <button class="btn btn-primary-custom w-100 btn-agregar">Agregar al carrito 🛒</button>
                     </div>
                 </div>
             </div>
@@ -301,57 +180,63 @@ Semana4_TiendaVideojuegos
                         <h5 class="card-title">🎀 Kirby and the Forgotten Land</h5>
                         <p class="card-text text-muted">Acompaña a Kirby en una aventura 3D llena de color.</p>
                         <p class="precio mt-auto">💰 $49.990 CLP</p>
-                        <button class="btn btn-primary-custom w-100">Agregar al carrito 🛒</button>
+                        <button class="btn btn-primary-custom w-100 btn-agregar">Agregar al carrito 🛒</button>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        BOTÓN PARA CARGAR MÁS PRODUCTOS (Fetch API)
+        ======================================== -->
+        <div class="text-center mt-4">
+            <button id="btn-ver-mas" class="btn btn-primary-custom px-5">🔽 Ver más productos</button>
+        </div>
+    </section>
+
+    <!-- ========================================
+    NOSOTROS - Sección informativa
+    ======================================== -->
+    <section class="container mt-5" id="nosotros">
+        <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-6">
+                <h2 class="section-title">📖 Sobre ZonaGame</h2>
+                <p>Somos una tienda especializada en videojuegos, consolas y accesorios. Nuestro objetivo es ofrecer la mejor experiencia de compra para los gamers de Chile.</p>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Envíos a todo Chile</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Los mejores precios del mercado</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Atención personalizada</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Garantía en todos los productos</li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img src="https://wallpapercave.com/wp/wp11579600.jpg" alt="Fondo gamer vertical - ZonaGame" class="img-fluid rounded-4 shadow" style="max-height: 350px; width: auto;">
             </div>
         </div>
     </section>
 
     <!-- ========================================
-    NOSOTROS - Sección informativa (Grid)
+    CONTACTO - Formulario (con ID para JavaScript)
     ======================================== -->
-
-    <section class="container mt-5" id="nosotros">
-    <div class="row g-4 align-items-center">
-        <div class="col-12 col-lg-6">
-            <h2 class="section-title">📖 Sobre ZonaGame</h2>
-            <p>Somos una tienda especializada en videojuegos, consolas y accesorios. Nuestro objetivo es ofrecer la mejor experiencia de compra para los gamers de Chile.</p>
-            <ul class="list-unstyled">
-                <li><i class="bi bi-check-circle-fill text-success"></i> Envíos a todo Chile</li>
-                <li><i class="bi bi-check-circle-fill text-success"></i> Los mejores precios del mercado</li>
-                <li><i class="bi bi-check-circle-fill text-success"></i> Atención personalizada</li>
-                <li><i class="bi bi-check-circle-fill text-success"></i> Garantía en todos los productos</li>
-            </ul>
-        </div>
-        <div class="col-12 col-lg-6">
-            <!-- IMAGEN MÁS PEQUEÑA -->
-            <img src="https://wallpapercave.com/wp/wp11579600.jpg" alt="Fondo gamer vertical - ZonaGame" class="img-fluid rounded-4 shadow" style="max-height: 350px; width: auto;">
-        </div>
-    </div>
-</section>
-
-    <!-- ========================================
-    CONTACTO - Formulario
-    ======================================== -->
-
     <section class="container mt-5" id="contacto">
         <div class="row g-4">
             <div class="col-12 col-md-6">
                 <h2 class="section-title">📬 Contáctanos</h2>
                 <p class="text-muted">Déjanos tu mensaje y te responderemos a la brevedad.</p>
-                <form>
+
+                <!-- FORMULARIO CON ID (para evento submit) -->
+                <form id="formulario-contacto">
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Tu nombre">
+                        <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="tu@email.com">
+                        <input type="email" class="form-control" placeholder="tu@email.com" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Mensaje</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Escribe tu mensaje..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary-custom w-100">Enviar mensaje <i class="bi bi-send"></i></button>
                 </form>
@@ -374,7 +259,6 @@ Semana4_TiendaVideojuegos
     <!-- ========================================
     FOOTER - Pie de página
     ======================================== -->
-
     <footer class="mt-5">
         <div class="container">
             <div class="row g-4">
@@ -385,10 +269,10 @@ Semana4_TiendaVideojuegos
                 <div class="col-12 col-md-4">
                     <h5>Enlaces rápidos</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-4">
@@ -408,8 +292,12 @@ Semana4_TiendaVideojuegos
     <!-- ========================================
     BOOTSTRAP 5 JAVASCRIPT
     ======================================== -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ========================================
+    JAVASCRIPT PERSONALIZADO (Semana 5)
+    ======================================== -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

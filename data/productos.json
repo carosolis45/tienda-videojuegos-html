@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nombre": "Super Mario Bros. Wonder",
+        "descripcion": "Mundo de colores y sorpresas en la nueva aventura de Mario.",
+        "precio": 59990,
+        "imagen": "imagenes/mario.jpg",
+        "categoria": "aventura"
+    },
+    {
+        "id": 2,
+        "nombre": "Disney Dreamlight Valley",
+        "descripcion": "Vive con tus personajes Disney favoritos en este mágico valle.",
+        "precio": 69990,
+        "imagen": "imagenes/disney.jpg",
+        "categoria": "aventura"
+    },
+    {
+        "id": 3,
+        "nombre": "Minecraft",
+        "descripcion": "Construye todo lo que imagines en un mundo sin límites.",
+        "precio": 69990,
+        "imagen": "imagenes/minecraft.jpg",
+        "categoria": "sandbox"
+    },
+    {
+        "id": 4,
+        "nombre": "Hogwarts Legacy",
+        "descripcion": "Explora el mundo mágico de Harry Potter.",
+        "precio": 79990,
+        "imagen": "imagenes/hogwarts.jpg",
+        "categoria": "rpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Pokémon Violet",
+        "descripcion": "Aventura en un mundo abierto con tus Pokémon favoritos.",
+        "precio": 64990,
+        "imagen": "imagenes/pokemon.jpg",
+        "categoria": "rpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Kirby and the Forgotten Land",
+        "descripcion": "Acompaña a Kirby en una aventura 3D llena de color.",
+        "precio": 49990,
+        "imagen": "imagenes/kirby.jpg",
+        "categoria": "aventura"
+    }
+]
