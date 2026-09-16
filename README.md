@@ -128,12 +128,15 @@ tienda-videojuegos-html/
 ![Consola](capturas/semana6_captura7_consola.png)
 
 ## Imágenes de productos
-Super Mario Bros. Wonder ![Mario](assets/imagenes/mario.jpg) 
-Disney Dreamlight Valley ![Disney](assets/imagenes/disney.jpg) 
-Minecraft ![Minecraft](assets/imagenes/minecraft.jpg) 
-Hogwarts Legacy  ![Hogwarts](assets/imagenes/hogwarts.jpg) 
-Pokémon Violet  ![Pokemon](assets/imagenes/pokemon.jpg) 
-Kirby and the Forgotten Land  ![Kirby](assets/imagenes/kirby.jpg) |
+
+| Producto | Imagen |
+|----------|--------|
+| 🍄 Super Mario Bros. Wonder | ![Mario](assets/imagenes/mario.jpg) |
+| 🏰 Disney Dreamlight Valley | ![Disney](assets/imagenes/disney.jpg) |
+| ⛏️ Minecraft | ![Minecraft](assets/imagenes/minecraft.jpg) |
+| 🪄 Hogwarts Legacy | ![Hogwarts](assets/imagenes/hogwarts.jpg) |
+| 🌈 Pokémon Violet | ![Pokemon](assets/imagenes/pokemon.jpg) |
+| 🎀 Kirby and the Forgotten Land | ![Kirby](assets/imagenes/kirby.jpg) |
 
 ---
 Tecnologías utilizadas
