@@ -1,15 +1,17 @@
 /* ============================================================
    SCRIPT PRINCIPAL - ZONAGAME
    Ubicación: assets/js/script.js
-   Semana 6 - Carrito + Buscador + Fetch API
+   Semana 6 - Carrito + Buscador + Fetch + LocalStorage + Validaciones
    ============================================================
    Este archivo contiene:
    1. Inicialización del DOM
-   2. Carga de productos con Fetch API
+   2. Carga de productos con Fetch API (timeout + reintentos)
    3. Renderizado dinámico de productos
    4. Carrito de compras (agregar, eliminar, vaciar)
    5. Buscador de productos
    6. Notificaciones al usuario
+   7. Persistencia del carrito con localStorage
+   8. Validaciones del formulario de contacto
    ============================================================ */
 
 // ============================================================
@@ -19,41 +21,92 @@
 let carrito = [];
 let productosGlobales = [];
 
+// Clave para guardar el carrito en localStorage
+const CARRITO_KEY = 'zonagame_carrito';
+
 // ============================================================
 // 1. INICIALIZACIÓN DEL DOM
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('✅ DOM cargado correctamente');
+
+    // PRIMERO: Recuperar carrito guardado en localStorage
+    cargarCarritoDesdeStorage();
+
+    // DESPUÉS: Cargar productos y eventos
     cargarProductos();
     inicializarEventos();
+    inicializarBotonReintentar();
+    inicializarContadorMensaje();   // ← NUEVO
 });
 
 // ============================================================
-// 2. CARGAR PRODUCTOS CON FETCH API
+// 2. CARGAR PRODUCTOS CON FETCH API (TIMEOUT + REINTENTOS)
 // ============================================================
 
-function cargarProductos() {
+async function cargarProductos() {
     console.log('📦 Cargando productos desde JSON...');
 
-    fetch('assets/data/productos.json')
-        .then(response => {
+    const url = 'assets/data/productos.json';
+    const TIMEOUT_MS = 5000;
+    const MAX_INTENTOS = 3;
+    const ESPERA_MS = 2000;
+
+    document.getElementById('mensaje-carga').style.display = 'block';
+    document.getElementById('mensaje-error').style.display = 'none';
+
+    for (let intento = 1; intento <= MAX_INTENTOS; intento++) {
+        try {
+            console.log(`🔄 Intento ${intento} de ${MAX_INTENTOS}...`);
+
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+            const response = await fetch(url, { signal: controller.signal });
+            clearTimeout(timer);
+
             if (!response.ok) {
                 throw new Error(`Error HTTP: ${response.status}`);
             }
-            return response.json();
-        })
-        .then(productos => {
+
+            const productos = await response.json();
+
             console.log('✅ Productos cargados:', productos.length);
             productosGlobales = productos;
             document.getElementById('mensaje-carga').style.display = 'none';
+            document.getElementById('mensaje-error').style.display = 'none';
             renderizarProductos(productos);
-        })
-        .catch(error => {
-            console.error('❌ Error al cargar productos:', error);
-            document.getElementById('mensaje-carga').style.display = 'none';
-            document.getElementById('mensaje-error').style.display = 'block';
+            return;
+
+        } catch (error) {
+            console.warn(`⚠️ Intento ${intento} falló:`, error.message);
+
+            if (intento === MAX_INTENTOS) {
+                console.error('❌ Todos los intentos fallaron');
+                document.getElementById('mensaje-carga').style.display = 'none';
+                document.getElementById('mensaje-error').style.display = 'block';
+                return;
+            }
+
+            console.log(`⏳ Esperando ${ESPERA_MS / 1000} segundos...`);
+            await new Promise(resolve => setTimeout(resolve, ESPERA_MS));
+        }
+    }
+}
+
+// ============================================================
+// 2.1 ASIGNAR EVENTO AL BOTÓN DE REINTENTAR
+// ============================================================
+
+function inicializarBotonReintentar() {
+    const btnReintentar = document.getElementById('btn-reintentar');
+    if (btnReintentar) {
+        btnReintentar.addEventListener('click', function () {
+            console.log('🔁 Usuario hizo clic en Reintentar');
+            cargarProductos();
         });
+    }
 }
 
 // ============================================================
@@ -147,6 +200,7 @@ function agregarAlCarrito(id) {
 
     actualizarContadorCarrito();
     mostrarNotificacion(`🛒 ${producto.nombre} agregado al carrito`);
+    guardarCarritoEnStorage();
 }
 
 // ============================================================
@@ -226,6 +280,7 @@ function eliminarDelCarrito(id) {
     actualizarContadorCarrito();
     abrirModalCarrito();
     mostrarNotificacion('🗑️ Producto eliminado');
+    guardarCarritoEnStorage();
 }
 
 // ============================================================
@@ -241,6 +296,7 @@ function vaciarCarrito() {
     actualizarContadorCarrito();
     abrirModalCarrito();
     mostrarNotificacion('🗑️ Carrito vaciado completamente');
+    guardarCarritoEnStorage();
 }
 
 // ============================================================
@@ -257,6 +313,7 @@ function finalizarCompra() {
     carrito = [];
     actualizarContadorCarrito();
     abrirModalCarrito();
+    guardarCarritoEnStorage();
 }
 
 // ============================================================
@@ -282,14 +339,63 @@ function buscarProductos(e) {
 }
 
 // ============================================================
-// 13. FORMULARIO DE CONTACTO
+// 13. FORMULARIO DE CONTACTO (CON VALIDACIONES)
 // ============================================================
 
+/**
+ * Procesa el envío del formulario de contacto.
+ * Valida los campos antes de enviar y muestra feedback visual.
+ */
 function enviarContacto(e) {
     e.preventDefault();
-    const nombre = document.getElementById('nombre').value;
+
+    const formulario = e.target;
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+
+    // Validar que todos los campos estén correctos
+    if (!formulario.checkValidity()) {
+        formulario.classList.add('was-validated');
+        mostrarNotificacion('⚠️ Por favor, corrige los errores del formulario');
+        return;
+    }
+
+    // Validación extra: el email debe tener formato válido
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email)) {
+        document.getElementById('email').setCustomValidity('Email inválido');
+        formulario.classList.add('was-validated');
+        mostrarNotificacion('⚠️ Ingresa un correo electrónico válido');
+        return;
+    }
+
+    // ✅ Todo válido
     mostrarNotificacion(`✅ ¡Gracias ${nombre}! Tu mensaje ha sido enviado.`);
-    e.target.reset();
+    console.log('📧 Formulario enviado:', { nombre, email, mensaje });
+
+    // Limpiar formulario
+    formulario.reset();
+    formulario.classList.remove('was-validated');
+    document.getElementById('contador-mensaje').textContent = '0';
+}
+
+// ============================================================
+// 13.1 CONTADOR DE CARACTERES DEL MENSAJE
+// ============================================================
+
+/**
+ * Actualiza el contador de caracteres del mensaje en tiempo real.
+ */
+function inicializarContadorMensaje() {
+    const textareaMensaje = document.getElementById('mensaje');
+    const contador = document.getElementById('contador-mensaje');
+
+    if (textareaMensaje && contador) {
+        textareaMensaje.addEventListener('input', function () {
+            contador.textContent = this.value.length;
+        });
+    }
 }
 
 // ============================================================
@@ -306,6 +412,40 @@ function mostrarNotificacion(mensaje) {
         notificacion.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => notificacion.remove(), 300);
     }, 3000);
+}
+
+// ============================================================
+// 15. GUARDAR CARRITO EN LOCALSTORAGE
+// ============================================================
+
+function guardarCarritoEnStorage() {
+    try {
+        localStorage.setItem(CARRITO_KEY, JSON.stringify(carrito));
+        console.log('💾 Carrito guardado en localStorage:', carrito.length, 'productos');
+    } catch (error) {
+        console.error('❌ Error al guardar carrito:', error);
+    }
+}
+
+// ============================================================
+// 16. CARGAR CARRITO DESDE LOCALSTORAGE
+// ============================================================
+
+function cargarCarritoDesdeStorage() {
+    try {
+        const carritoGuardado = localStorage.getItem(CARRITO_KEY);
+
+        if (carritoGuardado) {
+            carrito = JSON.parse(carritoGuardado);
+            console.log('📦 Carrito recuperado:', carrito.length, 'productos');
+            actualizarContadorCarrito();
+        } else {
+            console.log('📦 No hay carrito guardado, empezando de cero');
+        }
+    } catch (error) {
+        console.error('❌ Error al cargar carrito:', error);
+        carrito = [];
+    }
 }
 
 // ============================================================

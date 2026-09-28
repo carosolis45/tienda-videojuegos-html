@@ -5,7 +5,7 @@ Semana6_TiendaVideojuegos
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 ZonaGame - Tienda de Videojuegos</title>
+    <title>🎮 ZonaGame 🎮- Tienda de Videojuegos</title>
 
     <!-- ========================================
     BOOTSTRAP 5 CDN
@@ -84,9 +84,6 @@ Semana6_TiendaVideojuegos
             <p class="lead">La tienda de videojuegos, consolas y accesorios</p>
             <p>Encuentra los mejores juegos al mejor precio</p>
 
-            <!-- ========================================
-            BUSCADOR (FORM SUBMIT)
-            ======================================== -->
             <form id="formulario-busqueda" class="mt-4 mx-auto" style="max-width: 500px;">
                 <div class="input-group">
                     <input type="text" class="form-control" id="input-busqueda" placeholder="🔍 Buscar productos...">
@@ -144,7 +141,7 @@ Semana6_TiendaVideojuegos
     PRODUCTOS - Contenedor dinámico (Fetch API)
     ======================================== -->
     <section class="container mt-5" id="productos">
-        <h2 class="section-title">🌟 Productos Destacados🌟</h2>
+        <h2 class="section-title">🌟 Productos Destacados 🌟</h2>
         <p class="text-muted mb-4">Descubre nuestra selección de videojuegos más populares</p>
 
         <!-- Mensaje de carga -->
@@ -158,7 +155,11 @@ Semana6_TiendaVideojuegos
         <!-- Mensaje de error (oculto por defecto) -->
         <div id="mensaje-error" class="alert alert-danger text-center" style="display: none;">
             <i class="bi bi-exclamation-triangle-fill"></i>
-            <strong>¡Lo sentimos!</strong> No pudimos cargar los productos. Por favor, intenta de nuevo.
+            <strong>¡Lo sentimos!</strong> No pudimos cargar los productos.
+            <p class="mt-2 mb-2">Verifica tu conexión a internet.</p>
+            <button class="btn btn-danger" id="btn-reintentar">
+                <i class="bi bi-arrow-clockwise"></i> Reintentar
+            </button>
         </div>
 
         <!-- Contenedor donde se mostrarán los productos dinámicamente -->
@@ -183,37 +184,85 @@ Semana6_TiendaVideojuegos
                 </ul>
             </div>
             <div class="col-12 col-lg-6">
-                <!-- IMAGEN GAMER "ARE YOU PLAYER?" -->
-            <img src="https://wallpapercave.com/wp/wp11579600.jpg" 
-                 alt="Are you Player - ZonaGame" 
-                 class="img-fluid rounded-4 shadow" 
-                 style="max-height: 450px; width: auto;">
+                <img src="https://wallpapercave.com/wp/wp11579600.jpg"
+                     alt="Are you Player - ZonaGame"
+                     class="img-fluid rounded-4 shadow"
+                     style="max-height: 450px; width: auto;">
             </div>
         </div>
     </section>
 
     <!-- ========================================
-    CONTACTO - Formulario
+    CONTACTO - Formulario con VALIDACIONES
     ======================================== -->
     <section class="container mt-5" id="contacto">
         <div class="row g-4">
             <div class="col-12 col-md-6">
                 <h2 class="section-title">📬 Contáctanos</h2>
                 <p class="text-muted">Déjanos tu mensaje y te responderemos a la brevedad.</p>
-                <form id="formulario-contacto">
+                <form id="formulario-contacto" novalidate>
+                    <!-- Campo: Nombre -->
                     <div class="mb-3">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            class="form-control"
+                            placeholder="Tu nombre"
+                            minlength="3"
+                            maxlength="50"
+                            required>
+                        <div class="invalid-feedback">
+                            El nombre debe tener al menos 3 caracteres.
+                        </div>
+                        <div class="valid-feedback">
+                            ¡Se ve bien!
+                        </div>
                     </div>
+
+                    <!-- Campo: Email -->
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="tu@email.com" required>
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="tu@email.com"
+                            required>
+                        <div class="invalid-feedback">
+                            Ingresa un correo válido (ejemplo@dominio.com).
+                        </div>
+                        <div class="valid-feedback">
+                            ¡Correo válido!
+                        </div>
                     </div>
+
+                    <!-- Campo: Mensaje -->
                     <div class="mb-3">
-                        <label class="form-label">Mensaje</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribe tu mensaje..." required></textarea>
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea
+                            id="mensaje"
+                            class="form-control"
+                            rows="3"
+                            placeholder="Escribe tu mensaje..."
+                            minlength="10"
+                            maxlength="500"
+                            required></textarea>
+                        <div class="invalid-feedback">
+                            El mensaje debe tener al menos 10 caracteres.
+                        </div>
+                        <div class="valid-feedback">
+                            ¡Mensaje listo!
+                        </div>
+                        <small class="text-muted">
+                            <span id="contador-mensaje">0</span>/500 caracteres
+                        </small>
                     </div>
-                    <button type="submit" class="btn btn-primary-custom w-100">Enviar mensaje <i class="bi bi-send"></i></button>
+
+                    <!-- Botón de envío -->
+                    <button type="submit" class="btn btn-primary-custom w-100">
+                        Enviar mensaje <i class="bi bi-send"></i>
+                    </button>
                 </form>
             </div>
             <div class="col-12 col-md-6">
